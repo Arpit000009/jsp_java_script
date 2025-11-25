@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ! form events -->
+    <!-- submit -->
+    <!-- change -->
+    <!-- input -->
+    <form>
+        Username <input type="text" class="username" /> <button>Submit</button>
+    </form>
+    <script>
+          let username = document.querySelector(".username");
+          let form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); // to stop the reload of
+            console.log(username.value);
+            console.log("Submitted");
+            username.value = "";
+        });
+
+        let user = document.querySelector(".username");
+        user.addEventListener("change", () => {
+            console.log(user.value);
+        });
+        user.addEventListener("input", () => {
+            console.log(user.value);
+        });
+    </script>
+</body>
+
+</html>

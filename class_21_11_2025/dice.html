@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .card{
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+        }
+        .card img{
+            height: 100%;
+            width: 100%;
+            border-radius: 50px;
+
+        }
+        .score{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card card1">
+            <img src="./img/d6.png" class="dice1" alt=""/>
+        </div>
+        <div class="card card2">
+            <img src="./imgs/d6.png" class="dice2" alt="" />
+        </div>
+    </div>
+    <h1 class="score">12</h1>
+    <button>roll dice</button>
+    <script>
+        let dice1 = document.querySelector(".dice1");
+        let dice2 = document.querySelector(".dice2");
+        let score = document.querySelector("score");
+        let btn = document.querySelector("button");
+        btn.addEventListener("click",()=>{
+            let r1 = Math.round(Math.random()*5)+1;
+            let r2 = Math.round(Math.random()*5)+1;
+            dice1.src = `./imgs/d${r1}.png`
+            dice2.src = `./imgs/d${r2}.png`
+            score.innerHTML = r1+r2;
+        })
+    </script>
+</body>
+</html>

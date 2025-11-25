@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .flex {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        section {
+            height: 500px;
+            width: 600px;
+            background-color: blueviolet;
+        }
+
+        div {
+            height: 300px;
+            width: 400px;
+            background-color: aquamarine;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="flex">
+    <section class="flex">
+        <div class="flex">
+            <button>Click</button>
+        </div>
+    </section>
+    <!-- ! Event Propagation -->
+    <!-- Event Propagation is the flow of event in the dom hierarchy  -->
+    <!-- Event flows in three phases -->
+    <!-- ! 1st phase - Event Capturing -->
+    <!-- whenever event flows from top level of hierarchy to the target (window to target) -->
+    <!-- ! 2nd phase - Event Target -->
+    <!-- the target event will be executed in this phase -->
+    <!-- ! 3rd phase - Event Bubbling -->
+    <!-- the event will flow again from target to window -->
+
+    <script>
+        let body = document.body;
+        let sec = document.querySelector("section");
+        let div = document.querySelector("div");
+        let btn = document.querySelector("button");
+        body.addEventListener(
+            "click",
+            () => {
+                console.log("Body is clicked");
+            },
+            true
+        );
+        sec.addEventListener(
+            "click",
+            () => {
+                console.log("Section is clicked");
+            },
+            true
+        );
+        div.addEventListener(
+            "click",
+            () => {
+                console.log("div is clicked");
+            },
+            true
+        );
+        btn.addEventListener(
+            "click",
+            () => {
+                console.log("btn is clicked");
+            },
+            true
+        );
+    </script>
+</body>
+
+</html>

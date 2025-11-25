@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div {
+            /* border: 2px solid black; */
+            width: fit-content;
+            transition: 0.5s ease all;
+        }
+
+        div img {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative; top: 0px; left: 0px" class="car">
+        <img src="https://img.freepik.com/free-psd/realistic-car-illustration_23-2151227622.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="" />
+    </div>
+
+    <script>
+        let car = document.querySelector(".car");
+        console.log(car.style.left);
+        console.log(car.style.top);
+
+        window.addEventListener("keypress", (e) => {
+            if (e.key.toLowerCase() == "a") {
+                car.style.left = parseInt(car.style.left) - 20 + "px";
+            } else if (e.key.toLowerCase() == "d") {
+                car.style.left = parseInt(car.style.left) + 20 + "px";
+            } else if (e.key.toLowerCase() == "w") {
+                car.style.top = parseInt(car.style.top) - 20 + "px";
+            } else if (e.key.toLowerCase() == "s") {
+                car.style.top = parseInt(car.style.top) + 20 + "px";
+            }
+            console.log("Key is pressed");
+        });
+    </script>
+</body>
+
+</html>
+
+<!--! https://codeshare.io/5op9mp -->
+<!-- ! What is DOM -->
+<!-- ! What is Event -->
+<!-- ! What is Event Object-->
+<!-- ! What is this keyword -->
+<!-- ! What is call apply bind -->
+<!-- ! What is setTimeout and setinterval -->
+<!-- ! What is filter map reduce -->
+<!-- ! What is slice , splice , split , join -->
+<!-- ! change the color of body to random color whenevwe button is clicked -->

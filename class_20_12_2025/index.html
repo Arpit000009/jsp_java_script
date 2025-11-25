@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=|, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="console.log('heading is clicked')"
+    ondblclick="console.log('double click')"
+    onmouseenter="console.log('mouse has entered')"></h1>
+    <button onclick="changeTheme()"
+    class="themeBtn">Dark <i class="fa-solid fa-moon"></i> </button>
+    <h1>Times of India</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum magni quidem dolores voluptate, aut quo consequatur possimus pariatur officia veniam autem veritatis repudiandae dolorum porro quasi beatae, impedit nobis culpa numquam? Rem asperiores libero, natus quos inventore voluptate cupiditate deleniti, error dolor esse eveniet exercitationem beatae officia autem sint obcaecati ullam ut incidunt vel neque, laboriosam accusamus. Blanditiis deleniti esse dignissimos cupiditate maxime, obcaecati natus ad quod quaerat nobis minima placeat, velit consequuntur quibusdam ducimus delectus corrupti ea ut libero eveniet ratione! Maxime sapiente ducimus fuga nemo? Sit eligendi autem modi soluta sequi sunt, provident dolorem necessitatibus, ratione, dolore placeat!</p>
+    <script>
+        let body = document.body;
+        let btn = document.querySelector(".themeBtn");
+        function changeTheme(){
+            if(btn.innerHTML == `Dark <i class="fa-solid fa-moon"></i>` ){
+                btn.innerHTML == `light`;
+            }
+            else{
+                btn.innerHTML = `Dark <i class="fa-solid fa-moon"></i>` ;
+            }
+            body.classList.toggle("dark");
+        }
+    </script>
+</body>
+</html>
